@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <div class="header w-100 d-flex flex-wrap justify-content-between mb-3">
+    <div class="header-text d-flex flex-wrap align-items-center header-title">
+      <h1 class="my-1 page-title text-capitalize">Users</h1>
+    </div>
+
+    <div class="d-flex flex-wrap mr-sm-2 mr-md-0 my-sm-3 my-lg-0">
+      <div class="w-100 d-flex justify-content-lg-end">
+        <div
+          class="d-flex flex-wrap justify-content-lg-end btn-wrapper px-md-3"
+        >
+          <button
+            mat-flat-button=""
+            color="primary"
+            class="
+              rounded-pill
+              mat-flat-button mat-primary
+              header-btn
+              px-5
+              py-2
+            "
+            ng-reflect-color="primary"
+            (click)="openDeclineUserModal()"
+          >
+            <span class="mat-button-wrapper"> Remove a User </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-user-table></app-user-table>
+</div>

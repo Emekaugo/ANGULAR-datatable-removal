@@ -1,0 +1,29 @@
+<section mat-dialog-container class="dialog-area">
+  <h1 mat-dialog-title>Remove a user</h1>
+  <div mat-dialog-actions class="mt-15">
+    <mat-form-field
+      class="w-100"
+      appearance="fill"
+      [formGroup]="usersDeclineForm"
+    >
+      <mat-label>Reason</mat-label>
+      <textarea
+        formControlName="reason"
+        matInput
+        placeholder="Reason for Decline"
+      ></textarea>
+    </mat-form-field>
+    <div class="w-100 d-flex flex-wrap justify-content-center ">
+      <button
+        type="submit"
+        mat-flat-button
+        color="primary"
+        (click)="clickme()"
+        [disabled]="usersDeclineForm.invalid"
+      >
+        <span class="mat-button-wrapper"> Send for Approval </span>
+      </button>
+      <button mat-raised-button>cancel</button>
+    </div>
+  </div>
+</section>

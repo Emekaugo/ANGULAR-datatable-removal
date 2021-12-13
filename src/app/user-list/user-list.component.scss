@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .header {
+    .header-text {
+      width: fit-content;
+    }
+
+    .header-btn {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .page-title {
+      font-style: normal;
+      font-weight: bold !important;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      color: #243b53;
+    }
+  }
+}

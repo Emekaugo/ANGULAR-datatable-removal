@@ -1,0 +1,34 @@
+<div class="header">
+  <h2 mat-dialog-title>{{ data?.title }}</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content>
+  <p>{{ data?.message }}</p>
+
+  <mat-label>Comments</mat-label>
+  <mat-form-field
+    class="w-100"
+    appearance="outline"
+    [formGroup]="usersCommentForm"
+  >
+    <input formControlName="comment" matInput placeholder="Any Comments" />
+    {{ data?.inputsComments }}
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button [mat-dialog-close]="false">
+    {{ data?.cancelCaption }}
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="acceptComment()"
+    [disabled]="usersCommentForm.invalid"
+  >
+    {{ data?.confirmCaption }}
+  </button>
+</div>

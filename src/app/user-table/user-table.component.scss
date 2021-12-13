@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .user-card {
+    border-radius: 1rem;
+    padding: 1rem;
+    // background-color: white;
+
+    .table-head {
+      border-top: transparent 1rem solid;
+    }
+
+    .user-body {
+      border-top: 2px solid transparent;
+    }
+  }
+
+  .table-footer-text {
+    color: #404040;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+}

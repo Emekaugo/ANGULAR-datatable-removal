@@ -1,0 +1,72 @@
+<!-- <mat-card class="w-100 user-card">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr class="table-head">
+          <th>Name of category</th>
+          <th>Date Created</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="user-body">
+        <tr class="table-row text-capitalize row-color">
+          <td></td>
+          <td></td>
+          <td class="text-capitalise"></td>
+          <td>
+            <span class="active"> </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container pt-5">
+      <mat-paginator
+        class=""
+        [length]="50"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</mat-card> -->
+
+<!--
+ -->
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container
+      *ngFor="let column of displayedColumns"
+      [matColumnDef]="column"
+    >
+      <th mat-header-cell *matHeaderCellDef>
+        <div style="display: flex; align-items: center">
+          <span mat-sort-header>{{ column }}</span>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+    </ng-container>
+
+    <ng-container [matColumnDef]="'actions'">
+      <th mat-header-cell *matHeaderCellDef>actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="delete(element['nameOfCategory'])">
+          <mat-icon mat-icon-button color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 50]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
